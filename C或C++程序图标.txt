@@ -1,0 +1,13 @@
+1.新建一个文件夹
+里面放置所需要的内容
+2.制作一个ico图标
+去搜索一个网站制作
+3.新建一文本文档
+里面写上:id ICON "demo.ico"
+命名为:demo.rc
+4.使用命令
+windres -i "demo.rc" -o "demo.o"
+或者是(二选一)
+windres demo.rc demo.o
+5.加图标
+g++ main.cpp demo.o -o main.exe
