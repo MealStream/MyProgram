@@ -1,7 +1,7 @@
 @ECHO OFF&(PUSHD "%~DP0")&(REG QUERY "HKU\S-1-5-19">NUL 2>&1)||(
 powershell -Command "Start-Process '%~sdpnx0' -Verb RunAs"&&EXIT)
 
-::鍒涘缓蹇嵎鏂瑰紡
-mshta VBScript:Execute("Set a=CreateObject(""WScript.Shell""):Set b=a.CreateShortcut(a.SpecialFolders(""Desktop"") & ""\鎴戠殑绋嬪簭.lnk""):b.TargetPath=""%~sdp0MyProgram.exe"":b.WorkingDirectory=""%~sdp0"":b.Save:close")
+::创建快捷方式
+mshta VBScript:Execute("Set a=CreateObject(""WScript.Shell""):Set b=a.CreateShortcut(a.SpecialFolders(""Desktop"") & ""\我的程序.lnk""):b.TargetPath=""%~sdp0MyProgram.exe"":b.WorkingDirectory=""%~sdp0"":b.Save:close")
 
-ECHO.&ECHO 瀹屾垚 &TIMEOUT /t 2 >NUL&EXIT
+ECHO.&ECHO 完成 &TIMEOUT /t 2 >NUL&EXIT
